@@ -1,6 +1,6 @@
 export async function fetchToolPrices() {
     try {
-        const response = await fetch('http://dobrzeskadrowane.pl/api/tools');
+        const response = await fetch('http://165.232.126.17:8000/api/tools');
         const data = await response.json();
         const transformedTools = data.member.map(tool => ({
             id: tool['@id'].split('/').pop(),
@@ -19,7 +19,7 @@ export async function fetchToolPrices() {
 
 export async function fetchCoatingPrices() {
     try {
-        const response = await fetch('http://dobrzeskadrowane.pl/api/coating_prices');
+        const response = await fetch('http://165.232.126.17:8000/api/coating_prices');
         const data = await response.json();
         const transformedCoatings = data.member.map(coating => ({
             id: coating['@id'].split('/').pop(),
@@ -37,7 +37,7 @@ export async function fetchCoatingPrices() {
 
 export async function fetchToolTypes() {
     try {
-        const response = await fetch('http://dobrzeskadrowane.pl/api/tool_types');
+        const response = await fetch('http://165.232.126.17:8000/api/tool_types');
         const data = await response.json();
         const transformedToolTypes = data.member.map(type => ({
             id: type['@id'].split('/').pop(),
@@ -52,7 +52,7 @@ export async function fetchToolTypes() {
 
     export async function fetchCoatingTypes() {
         try {
-            const response = await fetch('http://dobrzeskadrowane.pl/api/coating_types');
+            const response = await fetch('http://165.232.126.17:8000/api/coating_types');
             const data = await response.json();
             const transformedCoatingTypes = data.member.map(type => ({
                 id: type['@id'].split('/').pop(),
